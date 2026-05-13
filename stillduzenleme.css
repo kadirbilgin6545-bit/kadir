@@ -1,0 +1,330 @@
+
+    
+
+
+body {
+    background-image: url(img/bc.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* ANA YAPI */
+#anadiv{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color:#1f242d;
+    height: 100%;
+    width: 100%;
+}
+
+/* HEADER */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222831;
+    padding: 15px 40px;
+    border-bottom: 2px solid #393E46;
+}
+
+.logo img{
+    width: 140px;
+    transition: 0.3s;
+}
+
+.logo img:hover{
+    transform: scale(1.05);
+}
+
+/* NAV */
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00c3ff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* ABOUT */
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 60px;
+    color: white;
+    flex: 1;
+}
+
+footer{
+    margin-top: auto;
+    background: #0f0f1a;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 2px solid #393E46;
+    width: 100%;
+}
+
+.footer-content h3{
+    margin-bottom: 10px;
+}
+
+.footer-content p{
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.footer-links a{
+    color: #00c3ff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover{
+    color: white;
+}
+
+.footer-bottom{
+    margin-top: 20px;
+    padding: 15px;
+    background: #0a0a12;
+    font-size: 14px;
+    color: #777;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+/* CARD */
+.box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* IMAGE */
+.box img {
+    
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+/* TEXT */
+.box h3 {
+    margin: 8px 0;
+    transition: 0.3s;
+}
+
+.box p {
+    font-size: 13px;
+    padding: 0 10px 12px;
+    transition: 0.3s;
+    line-height: 1.3;
+}
+
+/* HOVER TEXT ZOOM */
+.box:hover h3 {
+    transform: scale(1.2);
+}
+
+.box:hover p {
+    transform: scale(1.05);
+}
+
+/* TAG */
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: white;
+}
+
+/* =========================
+   BUFF
+========================= */
+.box.buff:hover {
+    background: #16a34a;
+    box-shadow: 0 0 20px #16a34a;
+}
+
+.box.buff .tag {
+    background: #16a34a;
+}
+
+/* =========================
+   NERF
+========================= */
+.box.nerf:hover {
+    background: #ef4444;
+    box-shadow: 0 0 20px #ef4444;
+}
+
+.box.nerf .tag {
+    background: #ef4444;
+}
+
+/* =========================
+   BALANCED
+========================= */
+.box.balanced:hover {
+    background: #facc15;
+    box-shadow: 0 0 20px #facc15;
+}
+
+.box.balanced .tag {
+    background: #facc15;
+}
+
+/* =========================
+   RESPONSIVE TASARIM
+========================= */
+
+/* TABLET */
+@media (max-width:1100px){
+
+    header{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    nav ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .boxes{
+        grid-template-columns: repeat(3, 1fr);
+        padding: 25px;
+    }
+
+}
+
+
+/* KÜÇÜK TABLET */
+@media (max-width:800px){
+
+    .boxes{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* TELEFON */
+@media (max-width:600px){
+
+    header{
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 15px;
+    }
+
+    .logo img{
+        width: 110px;
+    }
+
+    nav ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    nav ul li a{
+        font-size: 15px;
+    }
+
+    .boxes{
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .box img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .box h3{
+        font-size: 22px;
+    }
+
+    .box p{
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 14px 16px;
+    }
+
+    .tag{
+        font-size: 11px;
+        padding: 5px 9px;
+    }
+
+    .footer-content{
+        padding: 0 20px;
+    }
+
+    .footer-links{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links a{
+        margin: 0;
+    }
+
+    .footer-bottom{
+        font-size: 13px;
+    }
+
+}
